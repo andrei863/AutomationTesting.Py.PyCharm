@@ -24,7 +24,7 @@ Feature: Login Page
          | google.@gmail.com | ieyrghjklcvb   |
 
 
-    @regresion
+    @regression
     Scenario Outline: Trying to login with right email and password
      Given Currently i am on the login page
      When I enter "<username>" email
