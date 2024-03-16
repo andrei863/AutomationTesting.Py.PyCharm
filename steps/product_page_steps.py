@@ -59,7 +59,7 @@ def step_impl(context, text):
 
 
 @when('I press the login button')
-def stept_impl(context):
+def step_impl(context):
     context.login_page.click_login_button()
 
 
@@ -79,34 +79,69 @@ def step_impl(context, number):
 
 #SCENARIUL 4
 
+@given('Located in the login page')
+def step_impl(context):
+    context.login_page.open_page()
+
+@when('I press "{text}" email')
+def step_impl(context, text):
+    context.login_page.set_email(text)
+
+@when('I press  "{text}" password')
+def step_impl(context, text):
+    context.login_page.set_password(text)
+
+@when('I enter the login button')
+def step_impl(context):
+    context.login_page.click_login_button()
+
+@when('The product page URL is "https://www.saucedemo.com/v1/inventory.html"')
+def step_impl(context):
+    context.product_feature.verify_product_page_url()
+
+@when('I click the cart button')
+def step_impl(context):
+    context.product_feature.click_shopping_cart()
+
+@then('I should see "https://www.saucedemo.com/v1/cart.html"')
+def step_impl(context):
+    context.product_feature.verify_shopping_cart_page()
+
+
+#Scenariul 5
+
 @given('Present on the login page')
 def step_impl(context):
     context.login_page.open_page()
 
-@when('I push "{text}" email')
+@when('I write my "{text}" email')
 def step_impl(context, text):
     context.login_page.set_email(text)
 
-@when('I push "{text}" password')
+@when('I write my "{text}" password')
 def step_impl(context, text):
     context.login_page.set_password(text)
 
-@when('I push the login button')
-def stept_impl(context):
+@when('I click the login function')
+def step_impl(context):
     context.login_page.click_login_button()
 
-@when(' I navigate to page "https://www.saucedemo.com/v1/inventory.html"')
+@when('The product page URL is correct "https://www.saucedemo.com/v1/inventory.html"')
 def step_impl(context):
     context.product_feature.verify_product_page_url()
 
-@when('I push Add to cart')
+@when('I press the cart button')
 def step_impl(context):
-    context.product_feature.click_add_to_cart()
+    context.product_feature.click_shopping_cart()
 
-@when('I navigate to page "https://www.saucedemo.com/v1/cart.html"')
+@when('I have to see "https://www.saucedemo.com/v1/cart.html"')
 def step_impl(context):
-    context.product_feature.verify_cart_not_empty()
+    context.product_feature.verify_shopping_cart_page()
 
-@then('I should see no product in the cart')
+@when('I press the CHECKOUT button')
+def stept(context):
+    context.product_feature.click_check_out_button()
+
+@then('I should see the Checkout information page "https://www.saucedemo.com/v1/checkout-step-one.html"')
 def step_impl(context):
-    context.product_feature.verify_shopping_cart()
+    context.product_feature.verify_checkout_page_url()

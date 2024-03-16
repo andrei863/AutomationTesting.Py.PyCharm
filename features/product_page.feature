@@ -34,17 +34,30 @@ Feature: Product Page
          | standard_user     | secret_sauce   |
 
 
-      Scenario Outline:
-        Given Present on the login page
-        When I push "<username>" email
-        And I push "<password>" password
-        And I push the login button
+      Scenario Outline: Cart page
+        Given Located in the login page
+        When I press "<username>" email
+        And I press  "<password>" password
+        And I enter the login button
         And The product page URL is "https://www.saucedemo.com/v1/inventory.html"
-        And I push Add to cart
-        And I navigate to page "https://www.saucedemo.com/v1/cart.html"
-        And I click remove button
-        Then I should see no product in the cart
+        When I click the cart button
+        Then I should see "https://www.saucedemo.com/v1/cart.html"
 
         Examples:
+         | username          | password       |
+         | standard_user     | secret_sauce   |
+
+        Scenario Outline: Cart page CHECKOUT button
+          Given Present on the login page
+          When I write my "<username>" email
+          And I write my "<password>" password
+          And I click the login function
+          And The product page URL is correct "https://www.saucedemo.com/v1/inventory.html"
+          And I press the cart button
+          And I have to see "https://www.saucedemo.com/v1/cart.html"
+          And I press the CHECKOUT button
+          Then I should see the Checkout information page "https://www.saucedemo.com/v1/checkout-step-one.html"
+
+          Examples:
          | username          | password       |
          | standard_user     | secret_sauce   |
