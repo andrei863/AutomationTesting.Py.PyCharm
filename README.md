@@ -22,6 +22,7 @@ Feature: Login Page
     Given Currently i am on the login page
     Then The URL of the page is "https://www.saucedemo.com/v1/"
 
+
 Implementing Step Definitions: Write step definitions corresponding to the steps defined in the feature files. These step definitions execute the actual test logic.
 
 Example (using Behave):
