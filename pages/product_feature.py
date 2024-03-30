@@ -17,6 +17,12 @@ class ProductPage(BasePage):
     CART_PAGE_URL = "https://www.saucedemo.com/v1/cart.html"
     CHECKOUT_BUTTON = (By.CLASS_NAME, "btn_action ")
     CHECKOUT_PAGE_URL = "https://www.saucedemo.com/v1/checkout-step-one.html"
+    FIRST_NAME_INPUT = (By.ID, "first-name")
+    LAST_NAME_INPUT = (By.ID, "last-name")
+    ZIP_CODE_INPUT = (By.ID, "postal-code")
+    CONTINUE_BUTTON = (By.CLASS_NAME, "btn_primary")
+    FINISH_BUTTON = (By.CLASS_NAME, "btn_action")
+    THANK_YOU_MESSAGE = (By.CLASS_NAME, "complete-text")
 
 
     def open_page(self):
@@ -57,4 +63,22 @@ class ProductPage(BasePage):
 
     def verify_checkout_page_url(self):
         assert self.driver.current_url == self.CHECKOUT_PAGE_URL
+
+    def set_first_name(self, text):
+        self.type(self.FIRST_NAME_INPUT, text)
+
+    def set_last_name(self, text):
+        self.type(self.LAST_NAME_INPUT, text)
+
+    def set_zip_code(self, text):
+        self.type(self.ZIP_CODE_INPUT, text)
+
+    def press_continue_button(self):
+        self.find(self.CONTINUE_BUTTON).click()
+
+    def press_finish_button(self):
+        self.find(self.FINISH_BUTTON).click()
+
+    def thank_message(self, text):
+        assert text in self.find(self.THANK_YOU_MESSAGE).text
 

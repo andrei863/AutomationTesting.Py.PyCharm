@@ -12,8 +12,7 @@ class LoginPage(BasePage):
     INPUT_EMAIL = (By.ID,"user-name")
     INPUT_PASSWORD = (By.ID,"password")
     INPUT_LOGIN_BUTTON= (By.ID,"login-button")
-    #CLASS_ERROR_MESSAGE = (By.CLASS_NAME,'error-button')
-    XPATH_ERROR_MESSAGE = (By.XPATH , "//h3[@data-test='error']")
+    XPATH_ERROR_MESSAGE = (By.XPATH, "//h3[@data-test='error']")
 
     def open_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)

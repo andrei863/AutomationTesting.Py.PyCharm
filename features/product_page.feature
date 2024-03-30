@@ -20,7 +20,7 @@ Feature: Product Page
          | username          | password       |
          | standard_user     | secret_sauce   |
 
-
+    @regression
     Scenario Outline: Add to cart
       Given Located on the login page
       When I introduce "<username>" email
@@ -33,7 +33,7 @@ Feature: Product Page
          | username          | password       |
          | standard_user     | secret_sauce   |
 
-
+      @regression
       Scenario Outline: Cart page
         Given Located in the login page
         When I press "<username>" email
@@ -47,6 +47,7 @@ Feature: Product Page
          | username          | password       |
          | standard_user     | secret_sauce   |
 
+        @regression
         Scenario Outline: Cart page CHECKOUT button
           Given Present on the login page
           When I write my "<username>" email
@@ -61,3 +62,20 @@ Feature: Product Page
           Examples:
          | username          | password       |
          | standard_user     | secret_sauce   |
+
+
+          Scenario:
+            Given I press the login button
+            When I enter correct username email
+            And I enter correct password email
+            And I click the button
+            And I add product to cart
+            And I click the cart
+            And I click checkout button
+            And I enter First Name
+            And I enter Last Name
+            And I enter zip postal code
+            And I click the continue button
+            And I click finish button
+            Then I see "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+

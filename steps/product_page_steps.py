@@ -145,3 +145,59 @@ def stept(context):
 @then('I should see the Checkout information page "https://www.saucedemo.com/v1/checkout-step-one.html"')
 def step_impl(context):
     context.product_feature.verify_checkout_page_url()
+
+#Scenariu 6
+@given('I press the login button')
+def step_impl(context):
+    context.login_page.open_page()
+
+@when('I enter correct username email')
+def step_impl(context):
+    context.login_page.set_email('standard_user')
+
+@when('I enter correct password email')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
+
+@when('I click the button')
+def step_impl(context):
+    context.login_page.click_login_button()
+
+@when('I add product to cart')
+def step_impl(context):
+    context.product_feature.click_add_to_cart()
+
+@when('I click the cart')
+def step_impl(context):
+    context.product_feature.click_shopping_cart()
+
+@when('I click checkout button')
+def step_impl(context):
+    context.product_feature.click_check_out_button()
+
+@when('I enter First Name')
+def step_impl(context):
+    context.product_feature.set_first_name('Dorian')
+
+@when('I enter Last Name')
+def step_impl(context):
+    context.product_feature.set_last_name('Ciuca')
+
+@when('I enter zip postal code')
+def step_impl(context):
+    context.product_feature.set_zip_code('213214')
+
+@when('I click the continue button')
+def step_impl(context):
+    context.product_feature.press_continue_button()
+
+@when('I click finish button')
+def step_impl(context):
+    context.product_feature.press_finish_button()
+
+@then('I see "{text}"')
+def step_impl(context, text):
+    context.product_feature.thank_message(text)
+
+
+
