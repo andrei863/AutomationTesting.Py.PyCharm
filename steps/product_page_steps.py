@@ -41,7 +41,7 @@ def step_impl(context):
     context.product_feature.verify_product_page_url()
 
 
-# SCENARIUL 3 PENTRU COS
+
 
 @given('Located on the login page')
 def step_impl(context):
@@ -77,7 +77,6 @@ def step_impl(context):
 def step_impl(context, number):
     context.product_feature.verify_cart_not_empty(number)
 
-#SCENARIUL 4
 
 @given('Located in the login page')
 def step_impl(context):
@@ -108,7 +107,6 @@ def step_impl(context):
     context.product_feature.verify_shopping_cart_page()
 
 
-#Scenariul 5
 
 @given('Present on the login page')
 def step_impl(context):
