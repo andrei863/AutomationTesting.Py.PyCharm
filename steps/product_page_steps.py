@@ -21,14 +21,14 @@ def step_impl(context):
     context.login_page.open_page()
 
 
-@when('I put "{text}" email')
-def step_impl(context, text):
-    context.login_page.set_email(text)
+@when('I put right email')
+def step_impl(context):
+    context.login_page.set_email('standard_user')
 
 
-@when('I put "{text}" password')
-def step_impl(context, text):
-    context.login_page.set_password(text)
+@when('I put right password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
 
 
 @when('I access the login button')
@@ -83,13 +83,13 @@ def step_impl(context, number):
 def step_impl(context):
     context.login_page.open_page()
 
-@when('I press "{text}" email')
-def step_impl(context, text):
-    context.login_page.set_email(text)
+@when('I press the right email')
+def step_impl(context):
+    context.login_page.set_email('standard_user')
 
-@when('I press  "{text}" password')
-def step_impl(context, text):
-    context.login_page.set_password(text)
+@when('I press  the right password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
 
 @when('I enter the login button')
 def step_impl(context):
@@ -114,13 +114,13 @@ def step_impl(context):
 def step_impl(context):
     context.login_page.open_page()
 
-@when('I write my "{text}" email')
-def step_impl(context, text):
-    context.login_page.set_email(text)
+@when('I write my correct email')
+def step_impl(context):
+    context.login_page.set_email('problem_user')
 
-@when('I write my "{text}" password')
-def step_impl(context, text):
-    context.login_page.set_password(text)
+@when('I write my correct password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
 
 @when('I click the login function')
 def step_impl(context):

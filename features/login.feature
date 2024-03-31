@@ -24,6 +24,7 @@ Feature: Login Page
          | google.@gmail.com | ieyrghjklcvb   |
 
 
+
     @regression
     Scenario Outline: Trying to login with right email and password
      Given Currently i am on the login page
@@ -33,3 +34,11 @@ Feature: Login Page
       Examples:
          | username          | password       |
          | standard_user     | secret_sauce   |
+
+      @regression
+      Scenario: Checking pop up after login
+        Given I am located on the login page
+        When I enter the correct email address
+        And I enter the correct password
+        And I sign in
+        Then I press the pop up button

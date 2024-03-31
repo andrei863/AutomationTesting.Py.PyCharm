@@ -13,6 +13,8 @@ class LoginPage(BasePage):
     INPUT_PASSWORD = (By.ID,"password")
     INPUT_LOGIN_BUTTON= (By.ID,"login-button")
     XPATH_ERROR_MESSAGE = (By.XPATH, "//h3[@data-test='error']")
+    POP_UP_BUTTON = (By.CLASS_NAME, "bm-burger-button")
+
 
     def open_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)
@@ -33,6 +35,10 @@ class LoginPage(BasePage):
 
     def verify_login_error_message(self, text):
         assert text in self.find(self.XPATH_ERROR_MESSAGE).text
+
+    def click_pop_up_button(self):
+        self.find(self.POP_UP_BUTTON).click()
+
 
 
 
