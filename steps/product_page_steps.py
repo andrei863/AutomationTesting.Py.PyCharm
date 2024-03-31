@@ -151,11 +151,11 @@ def step_impl(context):
 def step_impl(context):
     context.login_page.open_page()
 
-@when('I enter correct username email')
+@when('I enter correct username')
 def step_impl(context):
     context.login_page.set_email('standard_user')
 
-@when('I enter correct password email')
+@when('I enter correct password')
 def step_impl(context):
     context.login_page.set_password('secret_sauce')
 
@@ -198,6 +198,34 @@ def step_impl(context):
 @then('I see "{text}"')
 def step_impl(context, text):
     context.product_feature.thank_message(text)
+
+@given('I access the login button')
+def step_impl(context):
+    context.login_page.open_page()
+
+@when('I introduce the correct email')
+def step_impl(context):
+    context.login_page.set_email('standard_user')
+
+@when('I introduce the correct password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
+
+@when('I press the access button')
+def step_impl(context):
+    context.login_page.click_login_button()
+
+@when('I put the product in to the cart')
+def step_impl(context):
+    context.product_feature.click_add_to_cart()
+
+@when('I access the cart')
+def step_impl(context):
+    context.product_feature.click_shopping_cart()
+
+@then('I click the remove from cart button')
+def step_impl(context):
+    context.product_feature.press_remove_button_from_cart()
 
 
 

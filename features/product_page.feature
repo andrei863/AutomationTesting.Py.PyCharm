@@ -60,8 +60,8 @@ Feature: Product Page
          @regression
           Scenario:
             Given I press the login button
-            When I enter correct username email
-            And I enter correct password email
+            When I enter correct username
+            And I enter correct password
             And I click the button
             And I add product to cart
             And I click the cart
@@ -72,4 +72,16 @@ Feature: Product Page
             And I click the continue button
             And I click finish button
             Then I see "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+
+
+           @regression
+           Scenario:
+             Given I access the login button
+             When I introduce the correct email
+             And I introduce the correct password
+             And I press the access button
+             And I put the product in to the cart
+             And I access the cart
+             Then I click the remove from cart button
+
 

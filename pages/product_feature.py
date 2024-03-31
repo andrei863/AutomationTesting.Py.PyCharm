@@ -23,6 +23,7 @@ class ProductPage(BasePage):
     CONTINUE_BUTTON = (By.CLASS_NAME, "btn_primary")
     FINISH_BUTTON = (By.CLASS_NAME, "btn_action")
     THANK_YOU_MESSAGE = (By.CLASS_NAME, "complete-text")
+    YOUR_CART_REMOVE_BUTTON = (By.CLASS_NAME, 'btn_secondary')
 
 
     def open_page(self):
@@ -81,4 +82,7 @@ class ProductPage(BasePage):
 
     def thank_message(self, text):
         assert text in self.find(self.THANK_YOU_MESSAGE).text
+
+    def press_remove_button_from_cart(self):
+        self.find(self.YOUR_CART_REMOVE_BUTTON).click()
 
