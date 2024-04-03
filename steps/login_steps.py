@@ -26,7 +26,7 @@ def step_impl(context, text):
     context.login_page.verify_login_error_message(text)
 
 
-@given('I am located on the login page')
+@when('I am located on the login page')
 def step_impl(context):
     context.login_page.open_page()
 

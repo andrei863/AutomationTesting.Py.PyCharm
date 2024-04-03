@@ -12,7 +12,6 @@ Feature: Login Page
 
   @regression
    Scenario Outline: Trying to login with wrong email
-     Given Currently i am on the login page
      When I enter "<username>" email
      And I enter "<password>" password
      And I click the login button
@@ -27,7 +26,6 @@ Feature: Login Page
 
     @regression
     Scenario Outline: Trying to login with right email and password
-     Given Currently i am on the login page
      When I enter "<username>" email
      And I enter "<password>" password
      And I click the login button
@@ -37,7 +35,7 @@ Feature: Login Page
 
       @regression
       Scenario: Checking pop up after login
-        Given I am located on the login page
+        When I am located on the login page
         When I enter the correct email address
         And I enter the correct password
         And I sign in

@@ -11,12 +11,12 @@ def step_impl(context):
     context.login_page.verify_url()
 
 
-@given(u'Now i am on the login page')
+@When(u'Now i am on the login page')
 def step_impl(context):
     context.login_page.open_page()
 
 
-@given('I am on the login page')
+@when('I am on the login page')
 def step_impl(context):
     context.login_page.open_page()
 
@@ -43,19 +43,19 @@ def step_impl(context):
 
 
 
-@given('Located on the login page')
+@when('Located on the login page')
 def step_impl(context):
     context.login_page.open_page()
 
 
-@when('I introduce "{text}" email')
-def step_impl(context, text):
-    context.login_page.set_email(text)
+@when('I introduce select the correct email')
+def step_impl(context):
+    context.login_page.set_email('problem_user')
 
 
-@when('I introduce "{text}" password')
-def step_impl(context, text):
-    context.login_page.set_password(text)
+@when('I introduce select the correct password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
 
 
 @when('I press the login button')
@@ -78,7 +78,7 @@ def step_impl(context, number):
     context.product_feature.verify_cart_not_empty(number)
 
 
-@given('Located in the login page')
+@when('Located in the login page')
 def step_impl(context):
     context.login_page.open_page()
 
@@ -108,7 +108,7 @@ def step_impl(context):
 
 
 
-@given('Present on the login page')
+@when('Present on the login page')
 def step_impl(context):
     context.login_page.open_page()
 
@@ -145,7 +145,7 @@ def step_impl(context):
     context.product_feature.verify_checkout_page_url()
 
 #Scenariu 6
-@given('I press the login button')
+@given('I enter the login button')
 def step_impl(context):
     context.login_page.open_page()
 
@@ -197,7 +197,7 @@ def step_impl(context):
 def step_impl(context, text):
     context.product_feature.thank_message(text)
 
-@given('I access the login button')
+@when('I utilize the login button')
 def step_impl(context):
     context.login_page.open_page()
 

@@ -6,12 +6,12 @@ Feature: Product Page
 
   @smoke
   Scenario: Check if the URL is correct
-    Given Now i am on the login page
+    When Now i am on the login page
     Then The current of the page is "https://www.saucedemo.com/v1/"
 
   @regression
   Scenario: Check the if the email and password are correct
-    Given I am on the login page
+    When I am on the login page
     When I put right email
     And I put right password
     And I access the login button
@@ -19,21 +19,18 @@ Feature: Product Page
 
 
     @regression
-    Scenario Outline: Add to cart
-      Given Located on the login page
-      When I introduce "<username>" email
-      And I introduce "<password>" password
+    Scenario: Add to cart
+      When Located on the login page
+      When I introduce select the correct email
+      And I introduce select the correct password
       And I press the login button
       And The URL of the product page is "https://www.saucedemo.com/v1/inventory.html"
       And I click Add to cart
       Then Cart has "1" item in it
-      Examples:
-         | username          | password       |
-         | standard_user     | secret_sauce   |
 
       @regression
       Scenario: Cart page
-        Given Located in the login page
+        When Located in the login page
         When I press the right email
         And I press  the right password
         And I enter the login button
@@ -45,7 +42,7 @@ Feature: Product Page
 
         @regression
         Scenario: Cart page CHECKOUT button
-          Given Present on the login page
+          When Present on the login page
           When I write my correct email
           And I write my correct password
           And I click the login function
@@ -59,7 +56,7 @@ Feature: Product Page
 
          @regression
           Scenario:
-            Given I press the login button
+            When I enter the login button
             When I enter correct username
             And I enter correct password
             And I click the button
@@ -76,7 +73,7 @@ Feature: Product Page
 
            @regression
            Scenario:
-             Given I access the login button
+             When I utilize the login button
              When I introduce the correct email
              And I introduce the correct password
              And I press the access button
