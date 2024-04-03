@@ -16,11 +16,6 @@ def step_impl(context):
     context.login_page.open_page()
 
 
-@when('I am on the login page')
-def step_impl(context):
-    context.login_page.open_page()
-
-
 @when('I put right email')
 def step_impl(context):
     context.login_page.set_email('standard_user')
@@ -40,12 +35,6 @@ def step_impl(context):
 def step_impl(context):
     context.product_feature.verify_product_page_url()
 
-
-
-
-@when('Located on the login page')
-def step_impl(context):
-    context.login_page.open_page()
 
 
 @when('I introduce select the correct email')
@@ -78,10 +67,6 @@ def step_impl(context, number):
     context.product_feature.verify_cart_not_empty(number)
 
 
-@when('Located in the login page')
-def step_impl(context):
-    context.login_page.open_page()
-
 @when('I press the right email')
 def step_impl(context):
     context.login_page.set_email('standard_user')
@@ -105,12 +90,6 @@ def step_impl(context):
 @then('I should see "https://www.saucedemo.com/v1/cart.html"')
 def step_impl(context):
     context.product_feature.verify_shopping_cart_page()
-
-
-
-@when('Present on the login page')
-def step_impl(context):
-    context.login_page.open_page()
 
 @when('I write my correct email')
 def step_impl(context):
@@ -144,10 +123,6 @@ def stept(context):
 def step_impl(context):
     context.product_feature.verify_checkout_page_url()
 
-#Scenariu 6
-@given('I enter the login button')
-def step_impl(context):
-    context.login_page.open_page()
 
 @when('I enter correct username')
 def step_impl(context):
@@ -197,9 +172,6 @@ def step_impl(context):
 def step_impl(context, text):
     context.product_feature.thank_message(text)
 
-@when('I utilize the login button')
-def step_impl(context):
-    context.login_page.open_page()
 
 @when('I introduce the correct email')
 def step_impl(context):

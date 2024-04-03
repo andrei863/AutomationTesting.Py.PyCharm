@@ -11,7 +11,6 @@ Feature: Product Page
 
   @regression
   Scenario: Check the if the email and password are correct
-    When I am on the login page
     When I put right email
     And I put right password
     And I access the login button
@@ -20,7 +19,6 @@ Feature: Product Page
 
     @regression
     Scenario: Add to cart
-      When Located on the login page
       When I introduce select the correct email
       And I introduce select the correct password
       And I press the login button
@@ -30,7 +28,6 @@ Feature: Product Page
 
       @regression
       Scenario: Cart page
-        When Located in the login page
         When I press the right email
         And I press  the right password
         And I enter the login button
@@ -42,7 +39,6 @@ Feature: Product Page
 
         @regression
         Scenario: Cart page CHECKOUT button
-          When Present on the login page
           When I write my correct email
           And I write my correct password
           And I click the login function
@@ -56,7 +52,6 @@ Feature: Product Page
 
          @regression
           Scenario:
-            When I enter the login button
             When I enter correct username
             And I enter correct password
             And I click the button
@@ -73,7 +68,6 @@ Feature: Product Page
 
            @regression
            Scenario:
-             When I utilize the login button
              When I introduce the correct email
              And I introduce the correct password
              And I press the access button
