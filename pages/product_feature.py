@@ -1,8 +1,8 @@
 
 
 from selenium.webdriver.common.by import By
-
 from pages.base_page import BasePage
+from selenium.webdriver.support.ui import Select
 
 
 class ProductPage(BasePage):
@@ -24,7 +24,7 @@ class ProductPage(BasePage):
     FINISH_BUTTON = (By.CLASS_NAME, "btn_action")
     THANK_YOU_MESSAGE = (By.CLASS_NAME, "complete-text")
     YOUR_CART_REMOVE_BUTTON = (By.CLASS_NAME, 'btn_secondary')
-
+    SELECT_DROOP_DOWN = (By.CLASS_NAME, 'product_sort_container')
 
     def open_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)
@@ -85,4 +85,14 @@ class ProductPage(BasePage):
 
     def press_remove_button_from_cart(self):
         self.find(self.YOUR_CART_REMOVE_BUTTON).click()
+
+    def sort_dropdown_button(self, text):
+        self.select_dropdown_option_by_text(self.SELECT_DROOP_DOWN, text)
+
+
+
+
+
+
+
 

@@ -197,5 +197,20 @@ def step_impl(context):
 def step_impl(context):
     context.product_feature.press_remove_button_from_cart()
 
+@when('I inssert the correct email')
+def step_impl(context):
+    context.login_page.set_email('standard_user')
+
+@when('I insert the correct password')
+def step_impl(context):
+    context.login_page.set_password('secret_sauce')
+
+@when('I utilize the login button')
+def step_impl(context):
+    context.login_page.click_login_button()
+
+@then('I use the dropdown')
+def step_impl(context):
+    context.product_feature.sort_dropdown_button('Price (high to low)')
 
 
