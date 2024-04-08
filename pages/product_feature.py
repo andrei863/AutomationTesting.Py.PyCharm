@@ -93,6 +93,13 @@ class ProductPage(BasePage):
     def verify_dropdown_button(self):
         assert self.driver.find_element(By.CLASS_NAME, 'inventory_item_price')
 
+    def inventory_item_price(self):
+        price_list = []
+        for element in self.driver.find_elements(*self.ELEMENTS_PRICE_LIST):
+            text_price = element.text
+            price = text_price.replace('$', ' ')
+            price_list.append(float(price))
+
 
 
 

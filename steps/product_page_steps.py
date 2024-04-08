@@ -213,8 +213,12 @@ def step_impl(context):
 def step_impl(context):
     context.product_feature.sort_dropdown_button('Price (high to low)')
 
-@then('I verify the dropdown button')
+@when('I verify the dropdown button')
 def step_impl(context):
     context.product_feature.verify_dropdown_button()
+
+@then('I verify the item price form High to Low')
+def step_impl(context):
+    context.product_feature.inventory_item_price()
 
 

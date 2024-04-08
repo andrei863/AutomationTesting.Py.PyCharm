@@ -81,6 +81,7 @@ Scenario: Add to cart
           And I insert the correct password
           And I utilize the login button
           And I use the dropdown
-          Then I verify the dropdown button
+          And I verify the dropdown button
+          Then I verify the item price form High to Low
 
 
