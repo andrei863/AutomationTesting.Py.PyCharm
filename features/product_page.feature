@@ -80,7 +80,7 @@ Scenario: Add to cart
           When I inssert the correct email
           And I insert the correct password
           And I utilize the login button
-          Then I use the dropdown
-
+          And I use the dropdown
+          Then I verify the dropdown button
 
 

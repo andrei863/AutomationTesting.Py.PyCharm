@@ -209,8 +209,12 @@ def step_impl(context):
 def step_impl(context):
     context.login_page.click_login_button()
 
-@then('I use the dropdown')
+@when('I use the dropdown')
 def step_impl(context):
     context.product_feature.sort_dropdown_button('Price (high to low)')
+
+@then('I verify the dropdown button')
+def step_impl(context):
+    context.product_feature.verify_dropdown_button()
 
 

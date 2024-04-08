@@ -25,6 +25,7 @@ class ProductPage(BasePage):
     THANK_YOU_MESSAGE = (By.CLASS_NAME, "complete-text")
     YOUR_CART_REMOVE_BUTTON = (By.CLASS_NAME, 'btn_secondary')
     SELECT_DROOP_DOWN = (By.CLASS_NAME, 'product_sort_container')
+    ELEMENTS_PRICE_LIST = (By.CLASS_NAME, 'inventory_item_price')
 
     def open_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)
@@ -88,6 +89,10 @@ class ProductPage(BasePage):
 
     def sort_dropdown_button(self, text):
         self.select_dropdown_option_by_text(self.SELECT_DROOP_DOWN, text)
+
+    def verify_dropdown_button(self):
+        assert self.driver.find_element(By.CLASS_NAME, 'inventory_item_price')
+
 
 
 
